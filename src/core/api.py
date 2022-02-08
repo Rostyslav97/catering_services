@@ -1,5 +1,6 @@
+from unicodedata import category
 from rest_framework.generics import ListAPIView, RetrieveAPIView
-from .models import Dish
+from .models import Category, Dish
 from .serializers import DishSerializer, DishIDSerializer, CategorySerializer
 
 class DishListAPI(ListAPIView):
