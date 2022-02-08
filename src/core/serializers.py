@@ -12,7 +12,7 @@ class DishIDSerializer(serializers.ModelSerializer):
         model = Dish
         exclude = ("category",)
 
-class CategorySerializer(serializers.ModelSerializer):
+class DishCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Dish
         fields = ("name", "category")
