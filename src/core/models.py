@@ -1,4 +1,6 @@
 from django.db import models
+from django.conf import settings
+
 
 class Dish(models.Model):
     name = models.CharField(max_length=70, unique=True)
@@ -12,18 +14,10 @@ class Dish(models.Model):
         return f"{self.name}"
 
 class Category(models.Model):
+    name = models.TextField()
 
-    CATEGORY_CHOICES = (
-        ('CS', 'Cold Snack'),
-        ('HS', 'Hot Snack'),
-        ('S', 'Salads'),
-        ('PD', 'Pork dishes'),
-        ('CD', 'Chicken dishes'),
-        ('BD', 'Bird dishes'),
-        ('SD', 'Side dishes'),
-        ('D', 'Desserts'),
-        ('DR', 'Drinks'),
-        ('SN', 'Snacks')
-    )
-
-    name = models.CharField(max_length=2, choices=CATEGORY_CHOICES)
+class Order(models.Model):
+    dish = models.ForeignKey("Dish", on_delete=models.CASCADE)
+    amount = models.CharField(max_length=200)
+    customer = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=False, on_delete=models.SET_NULL)
+    delivery_date = models.DateTimeField()

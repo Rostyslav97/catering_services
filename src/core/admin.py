@@ -11,6 +11,9 @@ class CategorieAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Category, CategorieAdmin)
 
+@admin.register(models.Order)
+class OrderAdmin(admin.ModelAdmin):
+	pass
 
 
 # @admin.register(Dish)

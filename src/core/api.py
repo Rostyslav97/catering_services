@@ -1,7 +1,7 @@
 from unicodedata import category
-from rest_framework.generics import ListAPIView, RetrieveAPIView
-from .models import Category, Dish
-from .serializers import DishSerializer, DishIDSerializer, DishCategorySerializer
+from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from .models import Category, Dish, Order
+from .serializers import DishSerializer, DishIDSerializer, DishCategorySerializer, OrderSerializer
 
 class DishListAPI(ListAPIView):
     queryset = Dish.objects.all()
@@ -20,4 +20,13 @@ class DishRetrieveIDAPI(RetrieveAPIView):
 class DishRetrieveCategoryAPI(RetrieveAPIView):
     queryset = Dish.objects.all()
     serializer_class = DishCategorySerializer
+    lookup_field = "id"
+
+class OrderListCreateSerializerAPI(ListCreateAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+
+class OrderRetrieveUpdateDestroyAPI(RetrieveUpdateDestroyAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
     lookup_field = "id"

@@ -1,11 +1,13 @@
 from django.urls import path
-from .api import DishListAPI, DishRetrieveAPI, DishRetrieveIDAPI, DishRetrieveCategoryAPI
+from .api import DishListAPI, DishRetrieveAPI, DishRetrieveIDAPI, DishRetrieveCategoryAPI, OrderListCreateSerializerAPI, OrderRetrieveUpdateDestroyAPI
 
 app_name = "dishes"
 
 urlpatterns = [
-    path("", DishListAPI.as_view(), name="list"),
-    path ("<int:id>/", DishRetrieveAPI.as_view(), name="retrieve"),
-    path("id/<int:id>/", DishRetrieveIDAPI.as_view(), name="retrieve_id"),
-    path("category/<int:id>/", DishRetrieveCategoryAPI.as_view(), name="retrieve_category")
+    path("dishes/", DishListAPI.as_view(), name="list"),
+    path ("dishes/<int:id>/", DishRetrieveAPI.as_view(), name="retrieve"),
+    path("dishes/id/<int:id>/", DishRetrieveIDAPI.as_view(), name="retrieve_id"),
+    path("dishes/category/<int:id>/", DishRetrieveCategoryAPI.as_view(), name="retrieve_category"),
+    path("orders/", OrderListCreateSerializerAPI.as_view(), name="orders"),
+    path("orders/<int:id>/", OrderRetrieveUpdateDestroyAPI.as_view(), name="retrieve_orders")
 ]
