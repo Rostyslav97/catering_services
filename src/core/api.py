@@ -1,6 +1,5 @@
-from unicodedata import category
-from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from .models import Category, Dish, Order
+from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView, RetrieveAPIView
+from .models import Dish, Order
 from .serializers import DishSerializer, DishIDSerializer, DishCategorySerializer, OrderSerializer
 
 class DishListAPI(ListAPIView):
@@ -26,7 +25,7 @@ class OrderListCreateSerializerAPI(ListCreateAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
-class OrderRetrieveUpdateDestroyAPI(RetrieveUpdateDestroyAPIView):
+class OrderRetrieveAPI(RetrieveAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
     lookup_field = "id"
