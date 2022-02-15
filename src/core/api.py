@@ -1,6 +1,6 @@
-from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView, RetrieveAPIView
-from .models import Dish, Order
-from .serializers import DishSerializer, DishIDSerializer, DishCategorySerializer, OrderSerializer
+from rest_framework.generics import ListAPIView, RetrieveAPIView, RetrieveAPIView
+from .models import Dish
+from .serializers import DishSerializer, DishIDSerializer
 
 class DishListAPI(ListAPIView):
     queryset = Dish.objects.all()
@@ -16,16 +16,11 @@ class DishRetrieveIDAPI(RetrieveAPIView):
     serializer_class = DishIDSerializer
     lookup_field = "id"
 
-class DishRetrieveCategoryAPI(RetrieveAPIView):
-    queryset = Dish.objects.all()
-    serializer_class = DishCategorySerializer
-    lookup_field = "id"
+# class OrderListCreateSerializerAPI(ListCreateAPIView):
+#     queryset = Order.objects.all()
+#     serializer_class = OrderSerializer
 
-class OrderListCreateSerializerAPI(ListCreateAPIView):
-    queryset = Order.objects.all()
-    serializer_class = OrderSerializer
-
-class OrderRetrieveAPI(RetrieveAPIView):
-    queryset = Order.objects.all()
-    serializer_class = OrderSerializer
-    lookup_field = "id"
+# class OrderRetrieveAPI(RetrieveAPIView):
+#     queryset = Order.objects.all()
+#     serializer_class = OrderSerializer
+#     lookup_field = "id"
