@@ -1,4 +1,4 @@
-# Catering Services Application 
+# Catering Services REST API Application 
 
 # Setup
 
