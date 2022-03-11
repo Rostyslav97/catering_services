@@ -1,5 +1,5 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveAPIView
-from .models import Cart, Cart_dish
+from .models import Cart, CartDish
 from .serializers import CartSerializer
 
 class CartListCreateAPI(ListCreateAPIView):

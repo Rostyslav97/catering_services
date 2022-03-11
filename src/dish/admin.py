@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core import models
+from dish import models
 # from category.models import Category
 # from category import models
 # from .models import Dish, Category

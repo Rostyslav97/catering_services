@@ -5,13 +5,8 @@ from .models import Dish
 class DishSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dish
-        exclude = ("id","category")
-
-class DishIDSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Dish
         exclude = ("category",)
-
+        
 # class OrderSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Order

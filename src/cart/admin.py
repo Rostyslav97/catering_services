@@ -2,7 +2,7 @@ from django.contrib import admin
 from cart import models
 
 # class TabularInlineLike(admin.TabularInline):
-#     model=models.Cart_dish
+#     model=models.CartDish
 
 # class CartAdmin(admin.ModelAdmin):
 #     inlines=[TabularInlineLike]

@@ -1,5 +1,5 @@
 from rest_framework.generics import RetrieveAPIView
-from core.models import Dish
+from dish.models import Dish
 from .serializers import CategorySerializer
 
 class CategoryRetrieveAPI(RetrieveAPIView):

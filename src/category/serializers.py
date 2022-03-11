@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from core.models import Dish
+from dish.models import Dish
 
 
 class CategorySerializer(serializers.ModelSerializer):
