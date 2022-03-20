@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from dish.models import Dish
+from dish.models import Category
 
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Dish
-        fields = ("name", "category")
+        model = Category
+        fields = "__all__"

@@ -3,5 +3,5 @@ from .models import Cart, CartDish
 
 class CartSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CartDish
+        model = Cart
         fields = "__all__"
