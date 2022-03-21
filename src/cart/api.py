@@ -1,12 +1,15 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveAPIView
-from .models import Cart, CartDish
-from .serializers import CartSerializer
+from rest_framework.generics import RetrieveAPIView, ListCreateAPIView
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .models import Cart
+from .serializers import CartSerializer, CartDetailSerializer
 
 class CartListCreateAPI(ListCreateAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartSerializer
 
+
 class CartRetrieveAPI(RetrieveAPIView):
     queryset = Cart.objects.all()
-    serializer_class = CartSerializer
+    serializer_class = CartDetailSerializer
     lookup_field = "id"
