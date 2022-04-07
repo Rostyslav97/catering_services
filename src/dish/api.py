@@ -2,6 +2,7 @@ from rest_framework.generics import ListAPIView, RetrieveAPIView, RetrieveAPIVie
 from .models import Dish
 from .serializers import DishSerializer
 
+
 class DishListAPI(ListAPIView):
     queryset = Dish.objects.all()
     serializer_class = DishSerializer

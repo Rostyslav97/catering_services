@@ -1,7 +1,7 @@
 from rest_framework.generics import RetrieveAPIView, ListCreateAPIView
 from .models import Cart
 from .serializers import CartSerializer, CartDetailSerializer
-from rest_framework.permissions import IsAuthenticated
+from .permissions import IsAdmin, IsOwner
 
 
 class CartListCreateAPI(ListCreateAPIView):
@@ -13,4 +13,4 @@ class CartRetrieveAPI(RetrieveAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartDetailSerializer
     lookup_field = "id"
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAdmin, )
