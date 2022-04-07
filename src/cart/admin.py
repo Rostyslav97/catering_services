@@ -9,3 +9,7 @@ from cart import models
 #     list_display = ("customer",)
 
 # admin.site.register(models.Cart, CartAdmin)
+
+@admin.register(models.Cart)
+class CartAdmin(admin.ModelAdmin):
+	pass
