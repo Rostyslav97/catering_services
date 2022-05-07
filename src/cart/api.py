@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 class CartListAPI(ListAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartSerializer
-    permission_classes = (IsOwnerOrReadOnly, )
+    permission_classes = (IsAdmin, )
 
 
 class CartRetrieveAPI(RetrieveAPIView):
