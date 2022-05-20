@@ -12,11 +12,3 @@ class DishRetrieveAPI(RetrieveAPIView):
     serializer_class = DishSerializer
     lookup_field = "id"
 
-# class OrderListCreateSerializerAPI(ListCreateAPIView):
-#     queryset = Order.objects.all()
-#     serializer_class = OrderSerializer
-
-# class OrderRetrieveAPI(RetrieveAPIView):
-#     queryset = Order.objects.all()
-#     serializer_class = OrderSerializer
-#     lookup_field = "id"

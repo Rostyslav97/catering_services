@@ -1,9 +1,5 @@
 from django.contrib import admin
 from dish import models
-# from category.models import Category
-# from category import models
-# from .models import Dish, Category
-# from .models import DishOrder
 
 
 class TabularInlineLike(admin.TabularInline):
@@ -15,15 +11,3 @@ class CategorieAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Category, CategorieAdmin)
 
-# @admin.register(models.Order)
-# class OrderAdmin(admin.ModelAdmin):
-# 	pass
-
-
-# @admin.register(models.Dish)
-# class DishAdmin(admin.ModelAdmin):
-# 	pass
-
-# @admin.register(Category)
-# class CategoryAdmin(admin.ModelAdmin):
-# 	pass
