@@ -10,6 +10,11 @@ from cart import models
 
 # admin.site.register(models.Cart, CartAdmin)
 
-@admin.register(models.Cart)
-class CartAdmin(admin.ModelAdmin):
+@admin.register(models.Order)
+class OrderAdmin(admin.ModelAdmin):
+	pass
+
+
+@admin.register(models.Basket)
+class BasketAdmin(admin.ModelAdmin):
 	pass
