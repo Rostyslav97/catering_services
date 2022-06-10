@@ -18,15 +18,13 @@ class CustomerSerializer(serializers.ModelSerializer):
             "is_active",
             "groups",
             "user_permissions",
-            "date_joined"
+            "date_joined",
         )
 
 
-
-
-
 class OrderSerializer(serializers.ModelSerializer):
-    customer = CustomerSerializer(read_only=True) 
+    customer = CustomerSerializer(read_only=True)
+
     class Meta:
         model = Order
         fields = "__all__"
@@ -34,16 +32,16 @@ class OrderSerializer(serializers.ModelSerializer):
 
 class OrderCreateSerializer(serializers.ModelSerializer):
     customer = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Order
         fields = "__all__"
 
 
-
-
 class BasketSeralizer(serializers.ModelSerializer):
     dish = DishSerializer(read_only=True)
     order = OrderSerializer(read_only=True)
+
     class Meta:
         model = Basket
         fields = "__all__"
