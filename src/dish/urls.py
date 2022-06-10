@@ -4,6 +4,6 @@ from .api import DishListAPI, DishRetrieveAPI
 app_name = "dishes"
 
 urlpatterns = [
-    path("dish/", DishListAPI.as_view(), name="list"),
-    path("dish/<int:id>/", DishRetrieveAPI.as_view(), name="retrieve"),
+    path("dishes/", DishListAPI.as_view(), name="list"),
+    path("dishes/<int:id>/", DishRetrieveAPI.as_view(), name="retrieve"),
 ]

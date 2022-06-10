@@ -1,7 +1,7 @@
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
 from .models import Order, Basket
 from .serializers import OrderSerializer, OrderCreateSerializer, BasketSeralizer, BaskerCreateSerializer
-from .permissions import IsAdmin, IsOwner, IsOwnerOrReadOnly
+from .permissions import IsAdmin, IsOwner, IsAdminorOwner
 from rest_framework.permissions import IsAuthenticated
 
 
@@ -15,7 +15,7 @@ class OrderRetrieveAPI(RetrieveAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
     lookup_field = "id"
-    permission_classes = (IsAdmin, )
+    permission_classes = (IsAdminorOwner, )
 
 
 class OrderCreateAPI(CreateAPIView):

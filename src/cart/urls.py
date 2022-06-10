@@ -4,9 +4,9 @@ from .api import OrderListAPI, OrderRetrieveAPI, OrderCreateAPI, BasketRetrieveA
 app_name = "cart"
 
 urlpatterns = [
-    path("order/", OrderListAPI.as_view(), name="order"),
-    path("order/<int:id>/", OrderRetrieveAPI.as_view(), name="order_retrieve"),
-    path("order/create/", OrderCreateAPI.as_view(), name="order_create"),
-    path('basket/<int:id>/', BasketRetrieveAPI.as_view(), name="basket_retrieve"),
-    path('basket/create/', BasketCreateAPI.as_view(), name='basket_create')
+    path("orders/", OrderListAPI.as_view(), name="list"),
+    path("orders/<int:id>/", OrderRetrieveAPI.as_view(), name="retrieve"),
+    path("orders/create/", OrderCreateAPI.as_view(), name="create"),
+    path('baskets/<int:id>/', BasketRetrieveAPI.as_view(), name="retrieve"),
+    path('baskets/create/', BasketCreateAPI.as_view(), name='create')
 ]
