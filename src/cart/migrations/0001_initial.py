@@ -53,15 +53,11 @@ class Migration(migrations.Migration):
                 ("delivery_date", models.DateTimeField(auto_now_add=True)),
                 (
                     "dish",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="dish.dish"
-                    ),
+                    models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to="dish.dish"),
                 ),
                 (
                     "order",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="cart.order"
-                    ),
+                    models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to="cart.order"),
                 ),
             ],
         ),

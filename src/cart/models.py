@@ -4,9 +4,7 @@ from dish.models import Dish
 
 
 class Order(models.Model):
-    customer = models.ForeignKey(
-        settings.AUTH_USER_MODEL, null=True, blank=False, on_delete=models.SET_NULL
-    )
+    customer = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=False, on_delete=models.SET_NULL)
 
     def __str__(self):
         return str(self.customer)
